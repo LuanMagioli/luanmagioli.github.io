@@ -1,0 +1,21 @@
+[
+    {
+        "title": "Adaptative 3D Point Clouds",
+        "html": "metric-learning",
+        "date": "Nov 2022",
+        "description": "Implementing the Iterative Closest-Points Algorithm for LiDAR Scans.",
+        "image": "/assets/images/lidar.png"
+    },
+    {
+        "title": "The Impact of Pandemics on Facial Recognition Technology",
+        "html": "metric-learning",
+        "description": "the application of Metric Learning and Reinforcement Learning techniques in TensorFlow for facial recognition and feature extraction in the context of a pandemic.",
+        "image": "/assets/images/metric_learning.png"
+    },
+    {
+        "title": "Sound Localization via Intersecting Manifolds",
+        "html": "metric-learning",
+        "description": "Advancing the Precision of Auditory Localization in Mice's Social Behavior Interpretations.",
+        "image": "/assets/images/vocalizations.png"
+    }
+]

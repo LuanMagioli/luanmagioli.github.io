@@ -1,0 +1,25 @@
+[
+    {
+        "topic": "web development",
+        "posts": [
+            {
+                "title": "Post 1",
+                "date": "2022-01-01",
+                "description": "This is the first post in my portfolio.",
+                "image": "/assets/images/placeholder.jpg"
+            },
+            {
+                "title": "Post 2",
+                "date": "2022-02-01",
+                "description": "This is the second post in my portfolio.",
+                "image": "/assets/images/placeholder.jpg"
+            },
+            {
+                "title": "Post 3",
+                "date": "2022-03-01",
+                "description": "This is the third post in my portfolio.",
+                "image": "/assets/images/placeholder.jpg"
+            }
+        ]
+    }
+]
