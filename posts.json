@@ -1,24 +1,46 @@
 [
     {
-        "topic": "web development",
+        "topic": "First Topic",
         "posts": [
             {
                 "title": "Post 1",
-                "date": "2022-01-01",
+                "date": "nov 2022",
                 "description": "This is the first post in my portfolio.",
-                "image": "/assets/images/placeholder.jpg"
+                "image": "/assets/images/vocalizations.png",
+                "readtime": "5 min read"
             },
             {
                 "title": "Post 2",
-                "date": "2022-02-01",
+                "date": "nov 2022",
                 "description": "This is the second post in my portfolio.",
-                "image": "/assets/images/placeholder.jpg"
+                "image": "/assets/images/vocalizations.png",
+                "readtime": "5 min read"
             },
             {
                 "title": "Post 3",
-                "date": "2022-03-01",
+                "date": "nov 2022",
                 "description": "This is the third post in my portfolio.",
-                "image": "/assets/images/placeholder.jpg"
+                "image": "/assets/images/vocalizations.png",
+                "readtime": "5 min read"
+            }
+        ]
+    },
+    {
+        "topic": "Second Topic",
+        "posts": [
+            {
+                "title": "Post 1",
+                "date": "nov 2022",
+                "description": "This is the first post in my portfolio.",
+                "image": "/assets/images/vocalizations.png",
+                "readtime": "5 min read"
+            },
+            {
+                "title": "Post 2",
+                "date": "nov 2022",
+                "description": "This is the second post in my portfolio.",
+                "image": "/assets/images/vocalizations.png",
+                "readtime": "5 min read"
             }
         ]
     }

@@ -19,7 +19,15 @@
 
   <title>Articles • Tutorials</title>  
 
-<link href="assets/main.82cfd66e.css" rel="stylesheet"></head>
+<link href="assets/main.82cfd66e.css" rel="stylesheet">
+  <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "lshukazfk7");
+  </script>
+</head>
 
 <body>
 
@@ -70,46 +78,96 @@
 <main class="" id="main-collapse">
 
 
-<div class="row">
+<div class="row" id="postContainer">
   <div class="col-xs-12 section-container-spacer">
     <h3>Journal • Articles • Tutorials</h3>
   </div>
 
-  <div class="card mb-3" style="max-width: 600px; margin-bottom: 10px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="./assets/images/signals.png" class="img-responsive rounded-start" alt="Signal processing">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Some thoughts about signal processing</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <div class="card-link">
-            <p class="card-text" style="float: right;"><small class="text-body-secondary">Jan 2022</small></p>
-            <a href="projects/metric-learning.html" class="btn btn-default btn-sm" title="" > 6 min read</a>  
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('posts.json')
+        .then(response => response.json())
+        .then(topics => {
+          const postContainer = document.getElementById('postContainer'); // Change this to match your container div ID
   
-  <div class="card mb-3" style="max-width: 600px; margin-bottom: 10px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="./assets/images/exclamation_mark.png" class="img-responsive rounded-start" alt="Signal processing">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Responsabilidade socioambiental dos profissionais desenvolvedores</h5>
-          <p class="card-text">O compromisso ético das empresas, clientes e funcionários na área de tecnologia da informção.</p>
-          <div class="card-link">
-            <p class="card-text" style="float: right;"><small class="text-body-secondary">Jan 2022</small></p>
-            <a href="projects/metric-learning.html" class="btn btn-default btn-sm" title="" > 6 min read</a>  
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          topics.forEach(topic => {
+            const topicTitle = document.createElement('h4');
+            topicTitle.className = 'section-container-spacer';
+            topicTitle.textContent = topic.topic;
+            postContainer.appendChild(topicTitle);
+
+            topic.posts.forEach(post => {
+              // Create elements for the post content
+              const cardDiv = document.createElement('div');
+              cardDiv.className = 'card mb-3';
+              cardDiv.style.maxWidth = '600px';
+              cardDiv.style.marginBottom = '10px';
+  
+              const rowDiv = document.createElement('div');
+              rowDiv.className = 'row g-0';
+  
+              const imgColDiv = document.createElement('div');
+              imgColDiv.className = 'col-md-4';
+  
+              const img = document.createElement('img');
+              img.src = post.image;
+              img.className = 'img-responsive';
+              img.alt = post.title;
+  
+              imgColDiv.appendChild(img);
+  
+              const bodyColDiv = document.createElement('div');
+              bodyColDiv.className = 'col-md-8';
+  
+              const cardBodyDiv = document.createElement('div');
+              cardBodyDiv.className = 'card-body';
+  
+              const h5 = document.createElement('h5');
+              h5.className = 'card-title';
+              h5.textContent = post.title;
+  
+              const p = document.createElement('p');
+              p.className = 'card-text';
+              p.textContent = post.description;
+  
+              const cardLinkDiv = document.createElement('div');
+              cardLinkDiv.className = 'card-link';
+  
+              const pDate = document.createElement('p');
+              pDate.className = 'card-text';
+              pDate.style.float = 'right';
+              const smallDate = document.createElement('small');
+              smallDate.className = 'text-body-secondary';
+              smallDate.textContent = post.date;
+              pDate.appendChild(smallDate);
+  
+              const a = document.createElement('a');
+              a.href = "posts/" + post.html + ".html";
+              a.className = 'btn btn-default btn-sm';
+              a.textContent = post.readtime;
+  
+              cardLinkDiv.appendChild(pDate);
+              cardLinkDiv.appendChild(a);
+  
+              cardBodyDiv.appendChild(h5);
+              cardBodyDiv.appendChild(p);
+              cardBodyDiv.appendChild(cardLinkDiv);
+  
+              bodyColDiv.appendChild(cardBodyDiv);
+  
+              rowDiv.appendChild(imgColDiv);
+              rowDiv.appendChild(bodyColDiv);
+  
+              cardDiv.appendChild(rowDiv);
+  
+              // Append the cardDiv to the container
+              postContainer.appendChild(cardDiv);
+            });
+          });
+        })
+        .catch(error => console.error('Error fetching posts:', error));
+    });
+  </script>
   
 </div>
 
