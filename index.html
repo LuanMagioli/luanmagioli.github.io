@@ -22,11 +22,11 @@
   <link href="assets/main.82cfd66e.css" rel="stylesheet">
 
   <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "lshukazfk7");
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "lshukazfk7");
   </script>
 </head>
 
@@ -65,11 +65,11 @@
 
         <nav class="nav-footer">
           <p class="nav-footer-social-buttons">
+            <a class="fa-icon" href="mailto:luanmagioli@gmail.com" title="">
+              <i class="fa fa-envelope"></i>
+            </a>
             <a class="fa-icon" href="https://www.instagram.com/luanmagioli" title="">
               <i class="fa fa-instagram"></i>
-            </a>
-            <a class="fa-icon" href="https://twitter.com/luanmagioli" title="">
-              <i class="fa fa-twitter"></i>
             </a>
           </p>
           <p>▒▒▓█ 2024</p>
@@ -86,25 +86,25 @@
         <h3>Software Development • Computer Vision • Machine Learning • Systems Architecture • Science</h3>
         <p>This section includes a variety of projects I've made in my carrer. Some projects focus more on solutions to
           real problems (especially in agriculture science), while others are primarily intended as a learning
-          experience.</p>
+          experience. <br/><i>Note: This portfolio is a work in progress, I'll finish the individual project pages by the end of the semester, please be comprehensive... Email me if you need any information :D</i></p>
       </div>
-
+      
       <script>
         document.addEventListener('DOMContentLoaded', function () {
           fetch('projects.json')
             .then(response => response.json())
             .then(posts => {
-              const postContainer = document.getElementById('postContainer'); 
-      
+              const postContainer = document.getElementById('postContainer');
+
               posts.forEach(post => {
                 const postDiv = document.createElement('div');
-                postDiv.className = 'col-xs-12 col-md-4 section-container-spacer'; 
-                
+                postDiv.className = 'col-xs-12 col-md-4 section-container-spacer';
+
                 const img = document.createElement('img');
                 img.className = 'img-responsive';
                 img.alt = '';
                 img.src = post.image;
-      
+
                 const h2 = document.createElement('h2');
                 h2.textContent = post.title;
 
@@ -113,22 +113,23 @@
 
                 const a = document.createElement('a');
                 a.href = "projects/" + post.html + ".html";
-                a.className = 'btn btn-default btn-sm';
+                a.className = 'btn btn-default btn-sm disabled'; //Enable when the page is ready
                 a.style = 'float: right;';
+
                 a.textContent = post.readtime;
-      
+
                 postDiv.appendChild(img);
                 postDiv.appendChild(h2);
                 postDiv.appendChild(p);
                 postDiv.appendChild(a);
-      
+
                 postContainer.appendChild(postDiv);
               });
             })
             .catch(error => console.error('Error fetching posts:', error));
         });
       </script>
-      
+
     </div>
 
 
@@ -147,7 +148,7 @@
     });
   </script>
 
-  
+
   <script type="text/javascript" src="assets/main.85741bff.js"></script>
 </body>
 

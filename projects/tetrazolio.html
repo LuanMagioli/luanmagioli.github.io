@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link href="../assets/images/duna.png" rel="apple-touch-icon">
+  <link href="../assets/images/duna.png" rel="icon">
+
+  <title>Desenvolvimento do Sistema de Análises do Teste de Tetrazólio em Sementes de Soja</title>  
+
+<link href="../assets/main.82cfd66e.css" rel="stylesheet">
+  <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "lshukazfk7");
+  </script>
+</head>
+
+<body>
+
+  <header class="">
+    <div class="navbar navbar-default visible-xs">
+      <button type="button" class="navbar-toggle collapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../index.html" style="float: right;">
+        <img src="../assets/images/anud.png" width="25" height="25" class="d-inline-block align-top" alt="" style="display: inline; padding-right: 4px;">
+        Luan Magioli
+      </a>
+    </div>
+  
+    <nav class="sidebar">
+      <div class="navbar-collapse" id="navbar-collapse">
+        <div class="site-header hidden-xs">
+            <a class="site-brand" href="../index.html" title="">
+              <img class="img site-logo" alt="" src="../assets/images/anud.png" style="width: 100px;">
+              <br/>
+              Luan Magioli
+            </a>
+          <p>Computer Vision / Software development / Artist</p>
+        </div>
+        <ul class="nav">
+          <li><a href="../index.html" title="">Software • Technology</a></li>
+          <li><a href="../posts.html" title=""><b>Articles • Tutorials</b></a></li>
+          <li><a href="../art.html" title="">Art • Sketches</a></li>
+        </ul>
+  
+        <nav class="nav-footer">
+          <p class="nav-footer-social-buttons">
+            <a class="fa-icon" href="mailto:luanmagioli@gmail.com" title="">
+              <i class="fa fa-envelope"></i>
+            </a>
+            <a class="fa-icon" href="https://www.instagram.com/luanmagioli" title="">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </p>
+          <p>▒▒▓█ 2024</p>
+        </nav>  
+      </div> 
+    </nav>
+</header>
+<main class="" id="main-collapse">
+
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+
+    <div class="section-container-spacer">
+        <h1>Desenvolvimento do Sistema de Análises do Teste de Tetrazólio em Sementes de Soja</h1>
+        <h4>L. L. Magioli, M. D. Pereira e A. M. Pacheco</h4>
+        
+        <blockquote>
+          <p>A cultura da soja é importante para o desenvolvimento da indústria alimentícia, pecuária e energética do país. Para garantir um bom rendimento no campo, plantas uniformes e maiores taxas de produtividade, é necessário utilizar sementes de qualidade. Através de testes laboratoriais é possível analisar as sementes a fim de extrair fatores que determinam seu desenvolvimento germinativo. Os dados obtidos nestes testes definem padrões de controle durante as etapas de colheita, transporte, beneficiamento e armazenamento das sementes. Dentre estes, o mais utilizado no país é o teste de tetrazólio graças a sua velocidade e eficiência na análise. O teste é o mais eficaz dentre os métodos tradicionais, entretanto discrepância entre os resultados e o tempo gasto na análise do teste o tornam ineficiente. Neste trabalho foi desenvolvido um método automático, utilizando técnicas de processamento digital de imagens (PDI), para a classificação de lotes de sementes de soja pelo teste de tetrazólio. Suas comparações com os métodos tradicionais mostraram que a análise automática executada pelo sistema possui um índice de erro similar aos de um analista, porém permite que o teste seja executado mais rapidamente já que processa, em um mesmo período de tempo, 10 vezes mais sementes que o teste manual feito pelo analista.</p>
+        </blockquote>
+        
+        <h3>Introdução</h3>
+        <p>A soja é um insumo essencial para a indústria alimentícia e para a fabricação de rações animais. Também pode ser utilizada na elaboração de cosméticos e no âmbito energético, atuando como biocombustível [1]. Estudos realizados pelo Ministério da Agricultura, Pecuária e Abastecimento (MAPA), publicados na Balança Comercial do Agronegócio do mês de maio de 2017, apontam que a soja é o principal setor exportador do agronegócio brasileiro chegando a 41,2% do valor total exportado pelo país [2]. O MAPA indica ainda que a cidade de Sorriso no Mato Grosso, maior produtora de soja e milho no Brasil, arrecadou aproximadamente e 2,5 bilhões de reais em 2015 [3].
+          Para garantir alto o vigor no campo, estantes uniformes e maiores taxas de produtividade, faz-se necessário utilizar sementes de qualidade. Essas sementes que apresentam vigor elevado executam processos metabólicos de maneira ágil, proporcionando uma germinação mais rápida, com maior taxa de crescimento e uniformidade. Deste modo, garantem um maior crescimento e rendimento de grãos [4], [5]. Através de testes de laboratório é possível retirar fatores obtidos a partir de aspectos extrínsecos ou intrínsecos à semente, como a deterioração por umidade, danos mecânicos e predação [3].
+          A análise de sementes extrai e apresenta dados que auxiliam os produtores durante o processo de controle de qualidade em qualquer momento da cadeia produtiva (semeadura, colheita, transporte, beneficiamento e armazenamento) [6]. Vários testes e metodologias foram desenvolvidas para extrair estes dados. Dentre estes, o teste de tetrazólio se apresenta como o mais utilizado em todo país graças a sua velocidade e eficiência na análise [4].  
+          O teste fundamenta-se na atividade de enzimas desidrogenases em células vivas, catalisando a solução do sal de tetrazólio (2-3-5 trifenil cloreto de tetrazólio) de uma solução incolor, a uma precipitação vermelho carmim (Fig. 1), insolúvel, conhecido por formazan, tornando possível identificar a condição das partes vitais da semente [4].</p>
+        
+        <figure>
+          <img class="img-responsive" alt="" src="../assets/images/tetrazolio (1).png">
+          <figcaption>Figura 1: Reação do teste de tetrazólio em sementes de soja. Fonte: [4].</figcaption>
+        </figure>
+    </div>
+
+    <div class="section-container-spacer">
+      <p><img class="img-responsive" alt="" src="./assets/images/img-12.jpg"></p>
+      <div class="row">
+          <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./assets/images/img-13.jpg"></p>
+          </div>
+          <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./assets/images/img-14.jpg"></p>
+          </div>
+      </div>
+    </div>
+
+    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  
+</div>
+    
+
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function (event) {
+  navbarToggleSidebar();
+  navActivePage();
+});
+</script>
+
+<script type="text/javascript" src="../assets/main.85741bff.js"></script></body>
+</html>
