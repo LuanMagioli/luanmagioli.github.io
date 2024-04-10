@@ -1,45 +1,26 @@
 [
     {
-        "topic": "First Topic",
+        "topic": "Visão Computacional",
         "posts": [
             {
-                "title": "Post 1",
-                "date": "nov 2022",
-                "description": "This is the first post in my portfolio.",
-                "image": "/assets/images/vocalizations.png",
-                "readtime": "5 min read"
-            },
-            {
-                "title": "Post 2",
-                "date": "nov 2022",
-                "description": "This is the second post in my portfolio.",
-                "image": "/assets/images/vocalizations.png",
-                "readtime": "5 min read"
-            },
-            {
-                "title": "Post 3",
-                "date": "nov 2022",
-                "description": "This is the third post in my portfolio.",
-                "image": "/assets/images/vocalizations.png",
+                "title": "Percepção visual e imagem digital",
+                "date": "Jan 2024",
+                "html": "imagem-digital",
+                "description": "No primeiro desta série de artigos, pretendo definir os fenômenos de percepção visual, do olho humano até a criação de imagens digitais, passando pelas bases teóricas que sustentam o Processamento Digital de Imagens.",
+                "image": "/assets/posts/digital-image-processing/decartes.jpg",
                 "readtime": "5 min read"
             }
         ]
     },
     {
-        "topic": "Second Topic",
+        "topic": "Processamento de Sinais",
         "posts": [
             {
-                "title": "Post 1",
-                "date": "nov 2022",
-                "description": "This is the first post in my portfolio.",
-                "image": "/assets/images/vocalizations.png",
-                "readtime": "5 min read"
-            },
-            {
-                "title": "Post 2",
-                "date": "nov 2022",
-                "description": "This is the second post in my portfolio.",
-                "image": "/assets/images/vocalizations.png",
+                "title": "Aquisição de sinais biológicos e calibração de sensores",
+                "date": "oct 2023",
+                "html": "aquisicao-sinais",
+                "description": "A postagem tenta organizar relatos de experimentos desenvolvidos em laboratório. Compreendendo todas as etapas do processo de calibração de sensores, captura e processamento de dados de sinais biológicos.",
+                "image": "/assets/posts/signal-processing/signal-aquisition (5).png",
                 "readtime": "5 min read"
             }
         ]

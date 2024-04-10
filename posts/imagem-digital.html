@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link href="../assets/images/duna.png" rel="apple-touch-icon">
+  <link href="../assets/images/duna.png" rel="icon">
+
+  <title>Introdução ao Processamento Digital de Imagens</title>
+
+  <link href="../assets/main.82cfd66e.css" rel="stylesheet">
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "lshukazfk7");
+  </script>
+</head>
+
+<body>
+
+  <header class="">
+    <div class="navbar navbar-default visible-xs">
+      <button type="button" class="navbar-toggle collapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../index.html" style="float: right;">
+        <img src="../assets/images/anud.png" width="25" height="25" class="d-inline-block align-top" alt=""
+          style="display: inline; padding-right: 4px;">
+        Luan Magioli
+      </a>
+    </div>
+
+    <nav class="sidebar">
+      <div class="navbar-collapse" id="navbar-collapse">
+        <div class="site-header hidden-xs">
+          <a class="site-brand" href="../index.html" title="">
+            <img class="img site-logo" alt="" src="../assets/images/anud.png" style="width: 100px;">
+            <br />
+            Luan Magioli
+          </a>
+          <p>Computer Vision / Software development / Artist</p>
+        </div>
+        <ul class="nav">
+          <li><a href="../index.html" title="">Software • Technology</a></li>
+          <li><a href="../posts.html" title=""><b>Articles • Tutorials</b></a></li>
+          <li><a href="../art.html" title="">Art • Sketches</a></li>
+        </ul>
+
+        <nav class="nav-footer">
+          <p class="nav-footer-social-buttons">
+            <a class="fa-icon" href="mailto:luanmagioli@gmail.com" title="">
+              <i class="fa fa-envelope"></i>
+            </a>
+            <a class="fa-icon" href="https://www.instagram.com/luanmagioli" title="">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </p>
+          <p>▒▒▓█ 2024</p>
+        </nav>
+      </div>
+    </nav>
+  </header>
+  <main class="" id="main-collapse">
+
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8">
+
+        <div class="section-container-spacer">
+          <h1>Percepção visual e imagem digital</h1>
+          <h4>Luan Magioli, janeiro de 2024</h4>
+          <div class="alert alert-danger">
+            <strong>Atenção!</strong> Este artigo AINDA está sendo adaptado para este site, em breve ele estará completo. <br />
+            <i>Se você gostou, compartilhe com seus amigos e me ajude a crescer :D</i> <br />
+            Tenho vários artigos esperando para serem revisados publicados (como este), então fique ligado!
+          </div>
+
+          <blockquote class="blockquote">
+            <p>Este é o começo de uma série de artigos sobre visão computacional, tentarei traçar uma linha tênue entre a
+              tecnologia e a ciência, já que trata-se de uma área interdisciplinar que envolve matemática,
+              física, neurociências, computação e engenharia.</p>
+          </blockquote>
+
+          <h3>Introdução</h3>
+          <p>
+            A percepção e <i>(mais afundo)</i> a construção da realidade são processos complexos realizados pelo cérebro
+            animal. A visão é um dos sentidos mais importantes para a sobrevivência, dado que a maioria dos animais
+            depende da luz para se orientar no ambiente.
+            <br />
+          <blockquote style="font-size: 16px;">
+            A visão é fruto de um <b>fenômeno físico</b>, que envolve a interação da luz com a matéria; <br />
+            É um <b>fenômeno biológico</b>, que envolve a interpretação dos sinais captados pelas retinas; <br />
+            É <b>fenômeno digital</b>, que envolve a captura, armazenamento e processamento de imagens. <br />
+          </blockquote>
+
+          Mas para entender como nós demos o dom da visão às máquinas, precisamos entender como nós, humanos, enxergamos
+          e interpretamos o mundo ao nosso redor (<i>além de como este mundo funciona</i>).
+          </p>
+
+          <h4>A luz e a visão humana</h4>
+          <p>
+            A luz é uma forma de energia eletromagnética composta por fótons - partículas que se movem em ondas - e por
+            causa disso, ela tem propriedades tanto de partículas quanto de ondas, um fenômeno conhecido como <a
+              href="https://www.britannica.com/science/wave-particle-duality">wave-particle duality</a>.
+            O interessante sobre isso é que dependendo da superfície e das propriedades do fóton, apenas uma fração da
+            luz incidente que é refletida. Chamamos isso de refletância. Por exemplo, um espelho tem alta refletância,
+            enquanto o carvão tem baixa refletância.
+            <br />
+            As ondas de luz podem ser descritas por suas propriedades físicas, como <i>comprimento de onda</i>,
+            <i>frequência</i> e <i>amplitude</i>. A luz visível, aquela que conseguimos enxergar, tem comprimento de
+            onda entre 400 e 700 nanômetros. Mas a luz não é apenas aquilo que conseguimos ver, ela é composta por um
+            espectro eletromagnético que vai desde as ondas de rádio até os raios gama.
+          </p>
+          <figure>
+            <img class="img-responsive" alt=""
+              src="../assets/posts/digital-image-processing/electromagnetic-spectrum.png">
+            <figcaption>Figura 1: Espectro eletromagnético, note que o espectro visível é apenas uma pequena fração do
+              total.</figcaption>
+          </figure>
+          <br />
+          <blockquote style="font-size: 16px;">
+            Ainda sobre refletância: diferentes materiais conseguem reter partículas em ondas de luz de diferentes
+            comprimentos. Por exemplo, a clorofila absorve a luz azul e vermelha, refletindo a luz verde. Isso é o que
+            dá a cor verde às plantas. <br />
+            <i>É por causa disso que cada material tem uma cor diferente.</i>
+          </blockquote>
+
+          <p>
+            O olho humano é um órgão composto por diversas estruturas que desempenham funções específicas. A luz entra
+            através da córnea, passa pelo cristalino e atinge a retina, onde é convertida em sinais químicos/elétricos
+            que são enviados ao cérebro através do nervo óptico. O cérebro, por sua vez, interpreta esses
+            sinais e (com <b>muito</b> trabalho) constrói a imagem que vemos. Decartes foi um dos primeiros a descrever
+            este processo, que ele chamou de <i>visão cartesiana</i>.
+          </p>
+
+          <figure>
+            <img class="img-responsive" alt="" src="../assets/posts/digital-image-processing/decartes.jpg">
+            <figcaption>Figura 2: A visão cartesiana de Rene Decartes, note que a imagem é desconstruída e reconstruída
+              várias vezes (de maneiras diferentes) até chegar ao cérebro.</figcaption>
+          </figure>
+          <br />
+          <p>
+            Para codificar a informação visual, o cérebro utiliza um sistema de coordenadas chamado <i>retinotópico</i>,
+            que mapeia a posição dos objetos no campo visual. Estes sinais são enviados pela retina, que é composta por
+            células fotorreceptoras chamadas <i>cones</i> e <i>bastonetes</i>, as responsáveis por captar a luz e
+            transformá-la em sinais elétricos. Os cones são responsáveis pela visão dos detalhes finos e de cores
+            <b>(ondas vermelhas, verdes e azuis)</b>, enquanto os bastonetes são responsáveis pela visão periférica e
+            noturna <i>(o que você enxerga ao fechar os olhos)</i>.
+          </p>
+
+          <figure>
+            <img class="img-responsive" alt="" src="../assets/posts/digital-image-processing/eyes-rods-and-cones.png">
+            <figcaption>Figura 3: A retina humana, note a distribuição dos cones e bastonetes.</figcaption>
+          </figure>
+          <br />
+          <blockquote style="font-size: 16px;">
+            Entender isso é importante para a visão computacional. As máquinas não enxergam como nós, mas os sensores
+            desenvolvidos para capturar imagens tentam imitar o olho humano.
+          </blockquote>
+
+          <p>
+            A realidade é um engruminhado de ruídos e sinais, nós não enxergamos o mundo como ele é, mas sim como o
+            cérebro interpreta, isso depende de diversos fatores, como a iluminação, a distância, o ângulo, a cor, a
+            textura, entre outros. <i>(Quando você está calmo ou estressado, você enxerga o mundo de maneiras
+              diferentes, não é? Apois, o buraco é bem mais fundo...)</i>
+            <br />Além disso, estamos sujeitos as limitações do nosso sistema visual e nervoso, que é muito bom em
+            algumas coisas, mas péssimo em outras <i>(lembra das ilusões de ótica?)</i>. Por exemplo, nós somos muito
+            bons em identificar padrões, mas péssimos em medir distâncias.
+          </p>
+
+          <h4>Sensores e imagens digitais</h4>
+
+          <p>
+            Olha, deixando de lado a possibilidade de dar uma aula de história sobre a fotografia, apenas trago uma
+            colagem histórica que achei interessante.
+            As imagens vão até a década de 70, quando algum engenheiro da Kodak inventou a primeira câmera digital.
+          </p>
+          <figure>
+            <img class="img-responsive" alt="" src="../assets/posts/digital-image-processing/history.png">
+            <figcaption>Figura 4: Imagens históricas, da esquerda para a direita respectivamente temos:
+              <ul>
+                <li>Primeira fotografia por Joseph Nicéphore Niépce, 1826.</li>
+                <li>
+                  Primeira fotografia colorida por James Clerk Maxwell, 1861.
+                </li>
+                <li>
+                  Imagem codificada por uma impressora telegráfica e transmitida por um cabo no oceano atlântico em
+                  1921.
+                </li>
+                <li>Primeira imagem digitalizada por Russell Kirsch, 1957</li>
+                <li>
+                  Primeira fotografia da terra vista da lua por uma sonda espacial, 1966.
+                </li>
+              </ul>
+            </figcaption>
+
+            <p>
+              Assim como o olho humano, os sensores são dispositivos que capturam a luz e a transformam em sinais
+              elétricos. Eles são compostos por uma matriz de células sensíveis à luz, chamadas <i>pixels</i>, que são
+              capazes de capturar a intensidade luminosa em um determinado ponto no espaço.
+              Eles são a base da visão computacional, fornecendo as informações visuais que as máquinas precisam para
+              "ver" o mundo ao seu redor.
+            </p>
+        </div>
+
+        <div class="section-container-spacer">
+          <p><img class="img-responsive" alt="" src="./assets/images/img-12.jpg"></p>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./assets/images/img-13.jpg"></p>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./assets/images/img-14.jpg"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      navbarToggleSidebar();
+      navActivePage();
+    });
+  </script>
+
+  <script type="text/javascript" src="../assets/main.85741bff.js"></script>
+</body>
+
+</html>

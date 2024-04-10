@@ -82,6 +82,7 @@
     <div class="row" id="postContainer">
       <div class="col-xs-12 section-container-spacer">
         <h3>Journal • Articles • Tutorials</h3>
+        <p><i>Warning: As there are not many resources in Portuguese on the web for some topics, this page may contain some non-English content that conflicts with the rest of the site.</i></p>
       </div>
 
       <script>
@@ -92,24 +93,27 @@
               const postContainer = document.getElementById('postContainer'); // Change this to match your container div ID
 
               topics.forEach(topic => {
-                const topicTitle = document.createElement('h4');
-                topicTitle.className = 'section-container-spacer';
+                const topicTitle = document.createElement('h3');
+                topicTitle.className = 'section-container-spacer col-md-10';
                 topicTitle.textContent = topic.topic;
                 postContainer.appendChild(topicTitle);
 
                 topic.posts.forEach(post => {
                   // Create elements for the post content
                   const cardDiv = document.createElement('div');
-                  cardDiv.className = 'card mb-3';
-                  cardDiv.style.maxWidth = '600px';
+                  cardDiv.className = 'card mb-2 col-md-10';
                   cardDiv.style.marginBottom = '10px';
-
+                  cardDiv.style.marginLeft = '20px';
+                  cardDiv.style.marginRight = '20px';
+                  cardDiv.style.padding = '10px';
+                  cardDiv.style.borderColor = '#000';
+                  cardDiv.style.borderStyle = 'solid';
+                  cardDiv.style.borderWidth = '1px';
                   const rowDiv = document.createElement('div');
                   rowDiv.className = 'row g-0';
 
                   const imgColDiv = document.createElement('div');
-                  imgColDiv.className = 'col-md-4';
-
+                  imgColDiv.className = 'col-md-3';
                   const img = document.createElement('img');
                   img.src = post.image;
                   img.className = 'img-responsive';
@@ -118,12 +122,12 @@
                   imgColDiv.appendChild(img);
 
                   const bodyColDiv = document.createElement('div');
-                  bodyColDiv.className = 'col-md-8';
+                  bodyColDiv.className = 'col-md-9';
 
                   const cardBodyDiv = document.createElement('div');
                   cardBodyDiv.className = 'card-body';
 
-                  const h5 = document.createElement('h5');
+                  const h5 = document.createElement('h4');
                   h5.className = 'card-title';
                   h5.textContent = post.title;
 
