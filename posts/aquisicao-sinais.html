@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link href="../assets/images/duna.png" rel="apple-touch-icon">
+  <link href="../assets/images/duna.png" rel="icon">
+
+  <title>Aquisição de sinais biológicos e calibração de sensores</title>
+
+  <link href="../assets/main.82cfd66e.css" rel="stylesheet">
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "lshukazfk7");
+  </script>
+</head>
+
+<body>
+
+  <header class="">
+    <div class="navbar navbar-default visible-xs">
+      <button type="button" class="navbar-toggle collapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../index.html" style="float: right;">
+        <img src="../assets/images/anud.png" width="25" height="25" class="d-inline-block align-top" alt=""
+          style="display: inline; padding-right: 4px;">
+        Luan Magioli
+      </a>
+    </div>
+
+    <nav class="sidebar">
+      <div class="navbar-collapse" id="navbar-collapse">
+        <div class="site-header hidden-xs">
+          <a class="site-brand" href="../index.html" title="">
+            <img class="img site-logo" alt="" src="../assets/images/anud.png" style="width: 100px;">
+            <br />
+            Luan Magioli
+          </a>
+          <p>Computer Vision / Software development / Artist</p>
+        </div>
+        <ul class="nav">
+          <li><a href="../index.html" title="">Software • Technology</a></li>
+          <li><a href="../posts.html" title=""><b>Articles • Tutorials</b></a></li>
+          <li><a href="../art.html" title="">Art • Sketches</a></li>
+        </ul>
+
+        <nav class="nav-footer">
+          <p class="nav-footer-social-buttons">
+            <a class="fa-icon" href="mailto:luanmagioli@gmail.com" title="">
+              <i class="fa fa-envelope"></i>
+            </a>
+            <a class="fa-icon" href="https://www.instagram.com/luanmagioli" title="">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </p>
+          <p>▒▒▓█ 2024</p>
+        </nav>
+      </div>
+    </nav>
+  </header>
+  <main class="" id="main-collapse">
+
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8">
+
+        <div class="section-container-spacer">
+          <h1>Aquisição de sinais biológicos e calibração de sensores</h1>
+          <h4>Amanda Barbosa, Elis Brisa, Luan Magioli e Joseph Paballo - Outubro de 2023</h4>
+          <div class="alert alert-danger">
+            <strong>Atenção!</strong> Este artigo AINDA está sendo adaptado para este site, em breve ele estará completo. <br />
+            <i>Se você gostou, compartilhe com seus amigos e me ajude a crescer :D</i> <br />
+            Tenho vários artigos esperando para serem revisados publicados (como este), então fique ligado!
+          </div>
+
+
+          <p>
+            Conhecer as características dos sensores utilizados nos experimentos se faz necessário, em especial quando a magnitude do valor é relevante para o estudo. De tal forma, para ter o máximo proveito da informação de um dado sinal, é necessário conhecer as características do sinal a ser registrado, de modo que se possam corrigir as distorções obtidas.
+          </p>
+
+          <p>
+            Dessa forma, é possível obter a <b>função de transferência</b>, que irá, a partir de um dado valor obtido no sensor, retornar o valor correspondente à magnitude do sinal no mundo físico. Para gerar essa função, é necessário conhecer os diferentes fatores de correção, como o <i>offset</i>, o <i>ganho</i> do sensor, a <i>assimetria</i>, a <i>não-linearidade</i>, a <i>dead-zone</i> e a <i>discretização</i> do sinal.
+          </p>
+          
+          <h4>Função de transferência</h4>
+
+          <p>
+            Trata-se uma representação matemática que descreve como um sistema reage a diferentes frequências de entrada. Ela é particularmente útil para analisar sistemas lineares e invariantes no tempo, onde a relação entre entrada e saída é constante e direta. Geralmente denotada como "H(s)," é uma razão entre as transformadas de Laplace da saída e da entrada do sistema. No nosso estudo, essa função é essencial para entender a relação entre os sensores 1 e 2.
+          </p>
+
+         
+          
+          <figure>
+            <img class="img-responsive" alt="" src="../assets/posts/signal-processing/signal-aquisition (3).png" >
+            <figcaption>Figura 1: Registro com os dois sensores para diferentes frequências de sinais em taxa de amostragem constante de 5 kHz. Nota-se que, apesar da diferença de amplitude entre os dois sensores, a taxa de amostragem é suficiente para descrever os sinais sem gerar flutuações de amplitude. A) Sinal de 1 Hz e taxa de amostragem de 5 kHz. A aproximação no canto superior direito mostra um pequeno atraso de fase entre os dois sensores. B) Sinal de 5 Hz e taxa de amostragem de 5 kHz. C) Sinal de 10 Hz e taxa de amostragem de 5 kHz. D) Sinal de 150 Hz e taxa de amostragem de 5 kHz.</figcaption>
+          </figure>
+          <br/>
+
+          <figure>
+            <img class="img-responsive" alt="" src="../assets/posts/signal-processing/signal-aquisition (6).png" >
+            <figcaption>Figura 2: Registro com os dois sensores para diferentes frequências de sinais em taxa de amostragem constante de 5 kHz. Nota-se que, apesar da diferença de amplitude entre os dois sensores, a taxa de amostragem é suficiente para descrever os sinais sem gerar flutuações de amplitude nas frequências mais baixas, porém gerando as distorções em frequências mais altas (1 e 2,5 KHz) . A) Sinal de 250 Hz e taxa de amostragem de 5 kHz. B) Sinal de 500 Hz e taxa de amostragem de 5 kHz. C) Sinal de 1 KHz e taxa de amostragem de 5 kHz. D) Sinal de 2,5 KHz e taxa de amostragem de 5 kHz.</figcaption>
+          </figure>
+          <br/>
+
+
+
+          <figure>
+            <img class="img-responsive" alt="" src="../assets/posts/signal-processing/signal-aquisition (4).png" >
+            <figcaption>Figura 3: Gráfico que demonstra os valores em tensão para cada valor gerado, em que é possível observar, nos valores do Sensor 2, o comportamento de amplificação e atenuação dos valores de entrada, em função dos valores do Sensor 1.</figcaption>
+          </figure>
+          <br/>
+
+          <figure>
+            <img class="img-responsive" alt="" src="../assets/posts/signal-processing/signal-aquisition (1).png" >
+            <figcaption>Figura 4: Sinal chirp com variações de frequência ao longo do tempo.</figcaption>
+          </figure>
+          <br/>
+
+          <figure>
+            <img class="img-responsive" alt="" src="../assets/posts/signal-processing/signal-aquisition (7).png" >
+            <figcaption>Figura 5: Impulse Response do sensor 2.</figcaption>
+          </figure>
+          <br/>
+
+          <figure>
+            <img class="img-responsive" alt="" src="../assets/posts/signal-processing/signal-aquisition (5).png" >
+            <figcaption>Figura 4: Calibração do sensor 2.</figcaption>
+          </figure>
+          <br/>
+
+          <figure>
+            <img class="img-responsive" alt="" src="../assets/posts/signal-processing/signal-aquisition (2).png" >
+            <figcaption>Figura 4: Filtragem do sensor 2.</figcaption>
+          </figure>
+        </div>
+        <br/>
+
+        <div class="section-container-spacer">
+          <p><img class="img-responsive" alt="" src="./assets/images/img-12.jpg"></p>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./assets/images/img-13.jpg"></p>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./assets/images/img-14.jpg"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      navbarToggleSidebar();
+      navActivePage();
+    });
+  </script>
+
+  <script type="text/javascript" src="../assets/main.85741bff.js"></script>
+</body>
+
+</html>
