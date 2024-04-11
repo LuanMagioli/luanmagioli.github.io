@@ -11,18 +11,5 @@
                 "readtime": "6 min read"
             }
         ]
-    },
-    {
-        "topic": "Processamento de Sinais",
-        "posts": [
-            {
-                "title": "Aquisição de sinais biológicos e calibração de sensores",
-                "date": "oct 2023",
-                "html": "aquisicao-sinais",
-                "description": "A postagem tenta organizar relatos de experimentos desenvolvidos em laboratório. Compreendendo todas as etapas do processo de calibração de sensores, captura e processamento de dados de sinais biológicos.",
-                "image": "/assets/posts/signal-processing/signal-aquisition (5).png",
-                "readtime": "5 min read"
-            }
-        ]
     }
 ]
