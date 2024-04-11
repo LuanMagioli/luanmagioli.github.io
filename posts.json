@@ -4,11 +4,11 @@
         "posts": [
             {
                 "title": "Percepção visual e imagem digital",
-                "date": "Jan 2024",
+                "date": "Mar 2024",
                 "html": "imagem-digital",
                 "description": "No primeiro desta série de artigos, pretendo definir os fenômenos de percepção visual, do olho humano até a criação de imagens digitais, passando pelas bases teóricas que sustentam o Processamento Digital de Imagens.",
                 "image": "/assets/posts/digital-image-processing/decartes.jpg",
-                "readtime": "5 min read"
+                "readtime": "6 min read"
             }
         ]
     },

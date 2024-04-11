@@ -82,7 +82,7 @@
 
         <div class="section-container-spacer">
           <h1>Percepção visual e imagem digital</h1>
-          <h4>Luan Magioli, janeiro de 2024</h4>
+          <h4>Luan Magioli, março de 2024</h4>
           <div class="alert alert-danger">
             <strong>Atenção!</strong> Este artigo AINDA está sendo adaptado para este site, em breve ele estará completo. <br />
             <i>Se você gostou, compartilhe com seus amigos e me ajude a crescer :D</i> <br />
@@ -103,7 +103,7 @@
             <br />
           <blockquote style="font-size: 16px;">
             A visão é fruto de um <b>fenômeno físico</b>, que envolve a interação da luz com a matéria; <br />
-            É um <b>fenômeno biológico</b>, que envolve a interpretação dos sinais captados pelas retinas; <br />
+            É um <b>fenômeno psicológico</b>, que envolve a interpretação dos sinais captados pelas retinas; <br />
             É <b>fenômeno digital</b>, que envolve a captura, armazenamento e processamento de imagens. <br />
           </blockquote>
 
@@ -149,7 +149,7 @@
 
           <figure>
             <img class="img-responsive" alt="" src="../assets/posts/digital-image-processing/decartes.jpg">
-            <figcaption>Figura 2: A visão cartesiana de Rene Decartes, note que a imagem é desconstruída e reconstruída
+            <figcaption>Figura 2: A visão cartesiana de Rene Decartes (Século XVII), note que a imagem é desconstruída e reconstruída
               várias vezes (de maneiras diferentes) até chegar ao cérebro.</figcaption>
           </figure>
           <br />
@@ -207,13 +207,60 @@
                 </li>
               </ul>
             </figcaption>
+            </figure>
+            <br/>
+            <p>
+              Toda fotografia é uma representação física/digital da realidade, ela organiza um ponto de vista da cena de acordo com a posição e intensidade da luz no sensor. A fotografia digital é uma evolução da analógica (óbvio), utilizando sensores eletrônicos para capturar a intensidade da luz em um determinado ponto no espaço e a transformam em sinais
+              elétricos. 
+            </p>
+            <blockquote style="font-size: 16px;">
+              Pretendo abordar mais sobre os sensores multiespectrais (fora do espectro visível) em um artigo futuro, mas por enquanto, vamos focar nos sensores digitais.
+            </blockquote>
+            <p>
+              Existem alguns 
+              dois tipos de sensores eletrônicos que conseguem capturar o espectro visível, os sensores CCD e CMOS. E não vou gastar meu tempo explicando eles enquanto <a href="https://youtu.be/28S47EE_opA">Captain Disillusion já lançou a braba</a>. <br/><i>(sério, assista o vídeo...)</i>        
+            </p>
+            
+            <p>  
+              A imagem em meios digitais é formada por uma matriz bidimensional onde cada elemento é chamado de <b>pixel</b>. Cada pixel é composto por um valor de intensidade luminosa, que pode ser representado por um valor numérico. 
+              <br/>
+              O "nível de detalhes" presente na realidade é infinito, com o auxílio de microscópios e telescópios conseguimos ver coisas que o olho humano não consegue. Mas uma máquina não consegue armazenar uma quantidade infinita de informação, então é necessário discretizar a informação em valores <i>finitos</i>, ou seja, limitar a quantidade de cores e a resolução da imagem. Só pra constar, este processo é chamado de <b>amostragem/quantização</b>.
+              </p>
+
+              <figure>
+                <div id="posterize">
+                  <img class="img-responsive" alt="" src="../assets/posts/digital-image-processing/decartes.jpg">
+                </div>
+                <figcaption>Sketch 1: Variando a quantidade de cores na imagem de 2 a 10 tons, processo chamado posterização.</figcaption>
+              </figure>
+              <br/>
+
+              <blockquote style="font-size: 16px;">
+                A quantidade de bits por pixel é chamada de <b>profundidade de cor</b>, e é um dos fatores que determina a qualidade da imagem. Nós humanos conseguimos diferenciar 256 tons de cinza <i>(8 bits)</i>, que distribuidos em 3 canais <i>(RGB) </i> resultam em 16 milhões de cores. <br/> 
+              </blockquote>
+
+              <p>
+              A resolução de uma imagem é dada pelo número de pixels na horizontal e na vertical, e é medida em pixels por polegada <i>(dpi)</i>, quanto maior a resolução, mais detalhes são capturados.
+              <br/>
+              <figure>
+                <div id="resolution">
+                  <img class="img-responsive" alt="" src="../assets/posts/digital-image-processing/decartes.jpg">
+                </div>
+                <figcaption>Sketch 2: Mudança de resolução de uma imagem digital no caso, variando de 5x5 pixels até 100x100 pixels.</figcaption>
+              </figure>
+            </p>
+            <br/>
 
             <p>
-              Assim como o olho humano, os sensores são dispositivos que capturam a luz e a transformam em sinais
-              elétricos. Eles são compostos por uma matriz de células sensíveis à luz, chamadas <i>pixels</i>, que são
-              capazes de capturar a intensidade luminosa em um determinado ponto no espaço.
-              Eles são a base da visão computacional, fornecendo as informações visuais que as máquinas precisam para
-              "ver" o mundo ao seu redor.
+              Podemos dizer matematicamente que uma imagem digital é uma função bidimensional <b><i>f(x, y)</i></b>, onde <b>x</b> e <b>y</b> são as coordenadas espaciais e o valor de <b>f</b> a intensidade luminosa. Representa-la dessa maneira nos ajuda a adaptar técnicas clássicas da matemática e processamento de sinais para a análise de imagens. Vou trazer mais sobre isso nos próximos artigos.
+            </p>
+            <p>Bom...</p>
+            <p>
+              Espero que tenha ajudado a entender um pouco mais sobre a visão e a imagem digital, e que tenha despertado a curiosidade para aprender mais sobre o assunto. Recomendo muito a leitura dos capítulos iniciais do livro <a href="https://www.google.com/search?q=pdf+processamento+digital+de+imagens+gonzalez+%26+woods">Processamento Digital de Imagens</a> de Gonzales e Woods, que é uma referência na área.
+            </p>
+
+            <p>
+              Até a próxima!
             </p>
         </div>
 
@@ -242,6 +289,8 @@
       navActivePage();
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+  <script src="../sketches/imagem-digital.js"></script>
 
   <script type="text/javascript" src="../assets/main.85741bff.js"></script>
 </body>
