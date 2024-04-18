@@ -9,6 +9,11 @@
   <meta name="google" content="notranslate" />
   <meta content="Luan Magioli" name="author">
 
+  <meta property="og:image" content="https://luanmagioli.github.io/assets/images/cover_software.png">
+  <meta property="og:title" content="Software • Technology">
+  <meta property="og:description"
+    content="This section includes a variety of projects I've made in my carrer. Some projects focus more on solutions to real problems (especially in agriculture science), while others are primarily intended as a learning experience.">
+
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
 
@@ -20,7 +25,147 @@
   <title>Software • Technology</title>
 
   <link href="assets/main.82cfd66e.css" rel="stylesheet">
+  <style class="cp-pen-styles">
+    h1,
+    h2,
+    p {
+      margin: 0;
+    }
 
+    /*--Generic classes--*/
+    ::selection {
+      color: tomato;
+      background: royalblue;
+    }
+
+    html {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      height: 100%;
+      -webkit-font-smoothing: antialiased !important;
+    }
+
+    *,
+    *:before,
+    *:after {
+      -webkit-box-sizing: inherit;
+      -moz-box-sizing: inherit;
+      box-sizing: inherit;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+
+    .flexbox {
+      display: -webkit-box;
+      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;
+      /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flexbox;
+      /* TWEENER - IE 10 */
+      display: -webkit-flex;
+      /* NEW - Chrome */
+      display: -moz-flex;
+      display: flex;
+
+      -webkit-flex-flow: row wrap;
+      flex-wrap: wrap;
+    }
+
+    .flexbox1 {
+      justify-content: space-around;
+    }
+
+    .flexbox2 {
+      justify-content: space-between;
+    }
+
+    .flexbox3 {
+      justify-content: flex-end;
+    }
+
+    .flexbox4 {
+      justify-content: center;
+    }
+
+    .container:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .col {
+      float: left;
+      width: 33.33%;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+
+    .col li {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .col li a,
+    .col li a:hover {
+      display: block;
+      background-position: center;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    .partial{
+      margin-bottom: 8px;
+      margin-left: 4px;
+      border: 1px solid #000;
+    }
+
+    .partial h2 {
+      font-weight: 300;
+      font-size: 1.4em;
+      padding: 4px;
+    }
+
+    .partial .bg-five h2 {
+      font-size: 2.4em;
+    }
+
+    .partial p {
+      line-height: 1.0;
+      letter-spacing: 1px;
+      text-align: justify;
+      padding: 4px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .col {
+        width: 100%;
+      }
+    }
+
+  </style>
   <script type="text/javascript">
     (function (c, l, a, r, i, t, y) {
       c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
@@ -31,7 +176,6 @@
 </head>
 
 <body>
-
   <header class="">
     <div class="navbar navbar-default visible-xs">
       <button type="button" class="navbar-toggle collapsed">
@@ -55,12 +199,14 @@
             <br />
             Luan Magioli
           </a>
-          <p>Computer Vision / Software development / Artist</p>
+          <p style="font-size: 12px;">Computer Vision / Software development / Artist</p>
         </div>
         <ul class="nav">
           <li><a href="index.html" title=""><b>Software • Technology</b></a></li>
           <li><a href="posts.html" title="">Articles • Tutorials</a></li>
           <li><a href="art.html" title="">Art • Sketches</a></li>
+          <li><br /></li>
+          <li><a style="font-size: 14px;" href="about.html" title=""><i>About me</i></a></li>
         </ul>
 
         <nav class="nav-footer">
@@ -79,6 +225,7 @@
   </header>
   <main class="" id="main-collapse">
 
+    
     <!-- Add your site or app content here -->
 
     <div class="grid" id="postContainer">
@@ -87,11 +234,17 @@
         <p>This section includes a variety of projects I've made in my carrer. Some projects focus more on solutions to
           real problems (especially in agriculture science), while others are primarily intended as a learning
           experience.</p>
-          <div class="alert alert-danger">
-            <i>Note: This portfolio is a work in progress, I'll finish the individual project pages by the end of the semester, please be comprehensive... Email me if you need any information :D</i>
-          </div>
+        <div class="alert alert-danger">
+          <i>Note: This portfolio is a work in progress, I'll finish the individual project pages by the end of the
+            semester, please be comprehensive... Email me if you need any information :D</i>
+        </div>
+
+        <div class="container" id="postContainer">
+          
+        </div>
+
       </div>
-      
+
       <script>
         document.addEventListener('DOMContentLoaded', function () {
           fetch('projects.json')
@@ -99,35 +252,72 @@
             .then(posts => {
               const postContainer = document.getElementById('postContainer');
 
-              posts.forEach(post => {
-                const postDiv = document.createElement('div');
-                postDiv.className = 'col-xs-12 col-md-4 section-container-spacer';
+              //make posts with "html" attribute first
+              const postsWithHtml = posts.filter(post => post.html !== "");
+              const postsWithoutHtml = posts.filter(post => post.html === "");
+              posts = postsWithHtml.concat(postsWithoutHtml);
 
+
+              const column = posts.reduce((acc, post, i) => {
+                acc[i % 3].push(post);
+                return acc;
+              }, [[], [], []]);
+
+              column.forEach(col => {
+                /*<li class="partial">
+              <a href="#" class="">
+                <img class="img-responsive" alt=""
+                src="/assets/images/shrimp.png"><a href="projects/shrimp.html">
+                <h2>Automated Shrimp Quality Certification Using Computer Vision</h2>          </a>
+                <p>By analysing the characteristics of the tail, body and head, it is possible to make a quick and accurate
+                  evaluation of the health of the shrimp. In addition, the system uses machine learning techniques to infer
+                  the weight of the animals using morphometric descriptors and performs clustering using colorimetric
+                  descriptors.</p>
+            </li>*/
+                const ul = document.createElement('ul');
+                ul.className = 'col';
+                col.forEach(post => {
+                const li = document.createElement('li');
+                li.className = 'partial';
+                const a = document.createElement('a');
+                
+                a.href = "projects/" + post.html + ".html";
                 const img = document.createElement('img');
                 img.className = 'img-responsive';
                 img.alt = '';
                 img.src = post.image;
-
+                
+                const a2 = document.createElement('a');
+                a2.href = "projects/" + post.html + ".html";
+                a2.className = 'btn btn-default btn-sm';
+                a2.style = 'float: right; margin-top: 4px; margin-right: 4px; margin-bottom: 4px;';
+                a2.textContent = post.readtime;
+                
                 const h2 = document.createElement('h2');
                 h2.textContent = post.title;
-
+                
                 const p = document.createElement('p');
                 p.textContent = post.description;
+                
+                a.appendChild(img);
+                a.appendChild(h2);
+                
+                if(post.html === ""){
+                  a2.className = 'btn btn-default btn-sm disabled';
+                  a2.href = "#";
+                  a.className = 'disabled';
+                  a.href = "#";
+                  a2.style = 'float: right; margin-top: 4px; margin-right: 4px; margin-bottom: 4px; pointer-events: none;';
+                  a.style = 'pointer-events: none;';
+                }
 
-                const a = document.createElement('a');
-                a.href = "projects/" + post.html + ".html";
-                a.className = 'btn btn-default btn-sm disabled'; //Enable when the page is ready
-                a.style = 'float: right;';
-
-                a.textContent = post.readtime;
-
-                postDiv.appendChild(img);
-                postDiv.appendChild(h2);
-                postDiv.appendChild(p);
-                postDiv.appendChild(a);
-
-                postContainer.appendChild(postDiv);
+                li.appendChild(a);
+                li.appendChild(p);
+                li.appendChild(a2);
+                ul.appendChild(li);
               });
+              postContainer.appendChild(ul);
+            });
             })
             .catch(error => console.error('Error fetching posts:', error));
         });

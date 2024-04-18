@@ -1,82 +1,72 @@
 [
     {
+        "title": "Efficiency and Accuracy: SAPL's Automated Seedling Analysis Solution",
+        "html": "",
+        "description": "The \"Sistema de Análise de Plântulas\" (SAPL) is a tool that enables automated seedling analysis to evaluate the quality of seed batches. It stands out for its precision and objectivity, compared to most of the tests traditionally used to conduct routine seed quality tests.",
+        "image": "/assets/images/sapl.JPG",
+        "readtime": "Full text available soon"
+    },
+    {
+        "title": "Automated Shrimp Quality Certification Using Computer Vision",
+        "html": "",
+        "description": "By analysing the characteristics of the tail, body and head, it is possible to make a quick and accurate evaluation of the health of the shrimp. In addition, the system uses machine learning techniques to infer the weight of the animals using morphometric descriptors and performs clustering using colorimetric descriptors.",
+        "image": "/assets/images/shrimp.png",
+        "readtime": "Full text available this week"
+    },    
+    {
+        "title": "Seed Sorting: Automated Sieve Classifiers Through Digital Image Processing",
+        "html": "",
+        "description": "This study proposes an automated system for corn and soy morphology analysis using digital image processing. The system, which is faster than traditional methods, efficiently extracts seed descriptors and classifies them according to predefined shape classes. It contributes to maintaining the homogeneity of the final product and aids in sowing and field distribution.",
+        "image": "/assets/images/sievecam.png",
+        "readtime": "Full text available soon"
+    },
+    {
         "title": "Sound Localization via Intersecting Manifolds",
-        "html": "metric-learning",
-        "date": "Nov 2022",
+        "html": "",
         "description": "By applying a series of signal processing techniques, this algorithm can accurately determine the direction of sound sources in a 3D space by analyzing the time differences between the signals received by each microphone. Advancing the Precision of Auditory Localization in Mice's Social Behavior Interpretations. ",
         "image": "/assets/images/vocalizations.png",
         "readtime": "Full text available soon"
     },
     {
         "title": "Java Framework For Image Analysis Of Seeds, Seedlings, Saplings And Their Components",
-        "html": "metric-learning",
-        "date": "Nov 2022",
+        "html": "",
         "description": "This work aims to analyse and develop the backend server of an agricultural image analysis framework, integrating it with the cloud and adapting it to required standards. Using technologies such as Java, Micronaut, PostgreSQL and Docker, independent microservices were developed with their own APIs, allowing flexibility and agility in development.",
         "image": "/assets/images/framework.jpg",
         "readtime": "Full text available soon"
     },
     {
         "title": "Adaptative 3D Point Clouds",
-        "html": "metric-learning",
-        "date": "Nov 2022",
-        "description": "Implementing the Iterative Closest-Points Algorithm for LiDAR Scans. Using the ICP algorithm to align point clouds from different scans, this study demonstrates the potential of LiDAR technology in autonomous vehicles and other applications.",
+        "html": "",
+        "description": "Implementing the Iterative Closest-Points Algorithm for LiDAR Scans. Using the ICP algorithm to align point clouds from different time-frames, this study demonstrates the potential of LiDAR technology in autonomous vehicles and other applications.",
         "image": "/assets/images/lidar.png",
         "readtime": "Full text available soon"
     },
     {
         "title": "Augmented Reality Environment Understanding with Depth Images and Tensorflow",
-        "html": "metric-learning",
-        "date": "Nov 2022",
+        "html": "",
         "description": "The system uses a Tensorflow model trained on a large set of Google's ARCore captures. These are depth images of physical spaces, either free or blocked. This approach integrates augmented reality technology and machine learning to interpret the environment in real time.",
         "image": "/assets/images/wheelchair.png",
         "readtime": "Full text available soon"
     },
     {
         "title": "ANJO: Advanced Remote Health Monitoring System for ALS Patients",
-        "html": "angel",
-        "date": "Dez 2023",
+        "html": "",
         "description": "ANJO is an innovative remote health monitoring solution designed specifically for patients with Amyotrophic Lateral Sclerosis (ALS). It offers real-time vital sign monitoring and immediate alerts for caregivers, ensuring timely intervention and enhanced quality of life.",
         "image": "/assets/images/anjo.png",
         "readtime": "Full text available soon"
     },
     {
-        "title": "Automated Shrimp Quality Certification Using Computer Vision",
-        "html": "shrimp",
-        "date": "Dez 2023",
-        "description": "By analysing the characteristics of the tail, body and head, it is possible to make a quick and accurate evaluation of the health of the shrimp. In addition, the system uses machine learning techniques to infer the weight of the animals using morphometric descriptors and performs clustering using colorimetric descriptors.",
-        "image": "/assets/images/shrimp.png",
-        "readtime": "Full text available soon"
-    },    
-    {
         "title": "Automated Tetrazolium Seed Viability Analysis for Soybeans",
-        "html": "tetrazolio",
-        "date": "Nov 2022",
+        "html": "",
         "description": "This study developed an automated method using digital image processing techniques to classify batches of soybean seeds immersed in the tetrazolium solution. Comparative analysis with traditional methods revealed similar precision between the automated system and human analysts with significantly improvement in time, handling tenfold more seeds within the same timeframe.",
         "image": "/assets/images/tetrazolio (9).png",
         "readtime": "Full text available soon"
     },
     {
         "title": "Impact of Pandemics on Facial Recognition Technology",
-        "html": "metric-learning",
-        "date": "Nov 2022",
+        "html": "",
         "description": "Exploring the impact of mask-wearing on the accuracy of facial recognition systems. Using Metric Learning and Reinforcement Learning techniques on TensorFlow for facial recognition and feature extraction in the context of a pandemic.",
         "image": "/assets/images/metric_learning.png",
-        "readtime": "Full text available soon"
-    },
-    {
-        "title": "Efficiency and Accuracy: SAPL's Automated Seedling Analysis Solution",
-        "html": "automated-seed-classification",
-        "date": "Apr 2024",
-        "description": "The \"Sistema de Análise de Plântulas\" (SAPL) is a tool that enables automated seedling analysis to evaluate the quality of seed batches. It stands out for its precision and objectivity, compared to most of the tests traditionally used to conduct routine seed quality tests.",
-        "image": "/assets/images/sapl.JPG",
-        "readtime": "Full text available soon"
-    },
-    {
-        "title": "Seed Sorting: Automated Sieve Classifiers Through Digital Image Processing",
-        "html": "automated-seed-classification",
-        "date": "Apr 2024",
-        "description": "This study proposes an automated system for corn and soy morphology analysis using digital image processing. The system, which is faster than traditional methods, efficiently extracts seed descriptors and classifies them according to predefined shape classes. It contributes to maintaining the homogeneity of the final product and aids in sowing and field distribution.",
-        "image": "/assets/images/sievecam.png",
         "readtime": "Full text available soon"
     }
 ]

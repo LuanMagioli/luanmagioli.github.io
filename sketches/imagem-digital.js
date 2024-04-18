@@ -68,8 +68,8 @@ var posterize = function (p) {
     const posterize = p.createCanvas(posterizeDiv.clientWidth, posterizeDiv.clientWidth/2);
     posterize.parent("posterize");
 
-    img1.resize(p.height, p.height);
-    img2.resize(p.height, p.height);
+    img1.resize(120, 120);
+    img2.resize(120, 120);
     p.noSmooth();
 
     posterize.mouseMoved(mouseOv);
@@ -88,13 +88,14 @@ var posterize = function (p) {
   p.draw = function () {
     p.background(255);
     
-    factor = 2 + p.abs(p.sin(p.frameCount * 0.005) * 10);
+    factor = 2 + p.abs(p.sin(p.frameCount * 0.02) * 10);
     if(mouseOver) {
       factor = mouseFactor;
     }
-    p.image(img1, 0,0);
+
+    p.image(img1, 0,0, p.width/2, p.height);
     p.filter(p.GRAY);
-    p.image(img2, p.width/2,0);
+    p.image(img2, p.width/2,0, p.width/2, p.height);
     p.filter(p.POSTERIZE, p.floor(factor));
   }
 }
