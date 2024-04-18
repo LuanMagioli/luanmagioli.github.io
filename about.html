@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="Professional portifolio" name="description">
+  <meta property="og:image" content="https://luanmagioli.github.io/assets/images/cover_about.png">
+  <meta property="og:title" content="About me">
+  <meta property="og:description"
+    content="I'm Luan Magioli, a Computer Vision Engineer and Software Developer, with a passion for art and music. Capoeirista who finds joy in movement and culture. Embracing life with curiosity and enthusiasm 🌊">
+
+  <meta name="google" content="notranslate" />
+  <meta content="Luan Magioli" name="author">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link href="assets/images/duna.png" rel="apple-touch-icon">
+  <link href="assets/images/duna.png" rel="icon">
+
+
+  <title>About me</title>
+  <link href="assets/main.82cfd66e.css" rel="stylesheet">
+
+  <style>
+    .timeline {
+      list-style: none;
+      padding: 20px 0 20px;
+      position: relative;
+    }
+
+    .timeline:before {
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      content: " ";
+      width: 3px;
+      background-color: #eeeeee;
+      right: 25px;
+      margin-left: -1.5px;
+    }
+
+    .timeline>li {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .timeline>li:before,
+    .timeline>li:after {
+      content: " ";
+      display: table;
+    }
+
+    .timeline>li:after {
+      clear: both;
+    }
+
+    .timeline>li:before,
+    .timeline>li:after {
+      content: " ";
+      display: table;
+    }
+
+    .timeline>li:after {
+      clear: both;
+    }
+
+    .timeline>li>.timeline-panel {
+      width: calc(100% - 75px);
+      float: left;
+      border: 1px solid #d4d4d4;
+      border-radius: 2px;
+      padding: 20px;
+      position: relative;
+      -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    }
+
+    .timeline>li>.timeline-panel:before {
+      position: absolute;
+      top: 26px;
+      right: -15px;
+      display: inline-block;
+      border-top: 15px solid transparent;
+      border-left: 15px solid #ccc;
+      border-right: 0 solid #ccc;
+      border-bottom: 15px solid transparent;
+      content: " ";
+    }
+
+    .timeline>li>.timeline-panel:after {
+      position: absolute;
+      top: 27px;
+      right: -14px;
+      display: inline-block;
+      border-top: 14px solid transparent;
+      border-left: 14px solid #fff;
+      border-right: 0 solid #fff;
+      border-bottom: 14px solid transparent;
+      content: " ";
+    }
+
+    .timeline>li>.timeline-badge {
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      line-height: 50px;
+      font-size: 1.4em;
+      text-align: center;
+      position: absolute;
+      top: 32px;
+      right: 15px;
+      margin-left: -25px;
+      background-color: #999999;
+      z-index: 100;
+      border-top-right-radius: 50%;
+      border-top-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel {
+      float: right;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel:before {
+      border-left-width: 0;
+      border-right-width: 15px;
+      left: -15px;
+      right: auto;
+    }
+
+    .timeline>li.timeline-inverted>.timeline-panel:after {
+      border-left-width: 0;
+      border-right-width: 14px;
+      left: -14px;
+      right: auto;
+    }
+
+    .timeline-badge.primary {
+      background-color: #2e6da4 !important;
+    }
+
+    .timeline-badge.success {
+      background-color: #3f903f !important;
+    }
+
+    .timeline-badge.warning {
+      background-color: #f0ad4e !important;
+    }
+
+    .timeline-badge.danger {
+      background-color: #d9534f !important;
+    }
+
+    .timeline-badge.info {
+      background-color: #5bc0de !important;
+    }
+
+    .timeline-title {
+      margin-top: 0;
+      color: inherit;
+    }
+
+    .timeline-body>p,
+    .timeline-body>ul {
+      margin-bottom: 0;
+    }
+
+    .timeline-body>p+p {
+      margin-top: 5px;
+    }
+  </style>
+
+  <style>
+    .profile-info-list {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+
+    .friend-list,
+    .img-grid-list {
+      margin: -1px;
+      list-style-type: none;
+    }
+
+    .profile-info-list>li.title {
+      font-size: 0.625rem;
+      font-weight: 700;
+      color: #fff;
+      padding: 0 0 0.3125rem;
+    }
+
+    .profile-info-list>li+li.title {
+      padding-top: 1.5625rem;
+    }
+
+    .profile-info-list>li {
+      padding: 0.625rem 0;
+    }
+
+    .profile-info-list>li .field {
+      font-weight: 700;
+    }
+
+    .profile-info-list>li .value {
+      color: #fff;
+    }
+
+    .profile-info-list>li.img-list a {
+      display: inline-block;
+    }
+
+    .profile-info-list>li.img-list a img {
+      max-width: 2.25rem;
+      -webkit-border-radius: 2.5rem;
+      -moz-border-radius: 2.5rem;
+      border-radius: 2.5rem;
+    }
+
+    .coming-soon-cover img,
+    .email-detail-attachment .email-attachment .document-file img,
+    .email-sender-img img,
+    .friend-list .friend-img img,
+    .profile-header-img img {
+      max-width: 100%;
+    }
+
+    .table.table-profile th {
+      border: none;
+      color: #000;
+      padding-bottom: 0.3125rem;
+      padding-top: 0;
+    }
+
+    .table.table-profile td {
+      border-color: #c8c7cc;
+    }
+
+    .table.table-profile tbody+thead>tr>th {
+      padding-top: 1.5625rem;
+    }
+
+    .table.table-profile .field {
+      color: #fff;
+      font-weight: 600;
+      width: 25%;
+      text-align: right;
+    }
+
+    .table.table-profile .value {
+      font-weight: 500;
+    }
+
+    .profile-header {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-header .profile-header-cover {
+      background: url(/assets/images/night.jpg) center no-repeat;
+      background-size: 100% auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    .profile-header .profile-header-cover:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0, rgba(0, 0, 0, 0.55) 100%);
+    }
+
+    .profile-header .profile-header-content,
+    .profile-header .profile-header-tab,
+    .profile-header-img,
+    body .fc-icon {
+      position: relative;
+    }
+
+    .profile-header .profile-header-tab {
+      background: #fff;
+      list-style-type: none;
+      margin: -1.25rem 0 0;
+      padding: 0 0 0 8.75rem;
+      border-bottom: 1px solid #c8c7cc;
+      white-space: nowrap;
+    }
+
+    .profile-header .profile-header-tab>li {
+      display: inline-block;
+      margin: 0;
+    }
+
+    .profile-header .profile-header-tab>li>p {
+      display: block;
+      color: #000;
+      line-height: 1.25rem;
+      padding: 0.625rem 1.25rem;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.75rem;
+      border: none;
+    }
+
+
+    .profile-header .profile-header-content:after,
+    .profile-header .profile-header-content:before {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .profile-header .profile-header-content {
+      color: #fff;
+    }
+
+    body .fc th a,
+    body .fc-ltr .fc-basic-view .fc-day-top .fc-day-number,
+    body .fc-widget-header a {
+      color: #000;
+    }
+
+    .profile-header-img {
+      float: left;
+      width: 15rem;
+      height: 15rem;
+      overflow: hidden;
+      z-index: 10;
+      margin: 0 1.25rem -1.25rem 0;
+      padding: 0.1875rem;
+      -webkit-border-radius: 0.25rem;
+      -moz-border-radius: 0.25rem;
+      border-radius: 0.25rem;
+      background: #fff;
+    }
+
+
+
+    .profile-container {
+      padding: 1.5625rem;
+    }
+
+    body {
+      color: #fff;
+    }
+
+    .container {
+      line-height: 1.5;
+    }
+
+    @media (max-width: 967px) {
+      .profile-header-img {
+        width: 5.625rem;
+        height: 5.625rem;
+        margin: 0;
+      }
+
+      .profile-header .profile-header-tab {
+        padding-left: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .profile-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+
+      header {
+        position: relative;
+        z-index: 12;
+        background-color: transparent;
+
+      }
+
+      .content {
+        margin-top: 110px;
+      }
+
+      .profile-header-img {
+        width: 15rem;
+        height: 15rem;
+        margin: 0;
+        overflow: hidden;
+
+      }
+
+
+      .profile-container {
+        padding: 0.9375rem 0.9375rem 3.6875rem;
+      }
+
+      .friend-list>li {
+        float: none;
+        width: auto;
+      }
+    }
+
+    .profile-info-list {
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+    }
+
+    .friend-list,
+    .img-grid-list {
+      margin: -1px;
+      list-style-type: none;
+    }
+
+    .profile-info-list>li.title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      padding: 0 0 0.3125rem;
+    }
+
+    .profile-info-list>li+li.title {
+      padding-top: 1.5625rem;
+    }
+
+    .profile-info-list>li {
+      padding: 0.625rem 0;
+    }
+
+    .profile-info-list>li .field {
+      font-weight: 700;
+    }
+
+    .profile-info-list>li .value {
+      color: #fff;
+    }
+
+    .profile-info-list>li.img-list a {
+      display: inline-block;
+    }
+
+    .profile-info-list>li.img-list a img {
+      max-width: 4rem;
+      -webkit-border-radius: 2.5rem;
+      -moz-border-radius: 2.5rem;
+      border-radius: 2.5rem;
+    }
+
+    .coming-soon-cover img,
+    .email-detail-attachment .email-attachment .document-file img,
+    .email-sender-img img,
+    .friend-list .friend-img img,
+    .profile-header-img img {
+      max-width: 100%;
+    }
+
+    .table.table-profile th {
+      border: none;
+      color: #000;
+      padding-bottom: 0.3125rem;
+      padding-top: 0;
+    }
+
+    .table.table-profile td {
+      border-color: #c8c7cc;
+    }
+
+    .table.table-profile tbody+thead>tr>th {
+      padding-top: 1.5625rem;
+    }
+
+    .table.table-profile .field {
+      color: #fff;
+      font-weight: 600;
+      width: 25%;
+      text-align: right;
+    }
+
+    .table.table-profile .value {
+      font-weight: 500;
+    }
+
+    .row.row-space-2 {
+      margin: 0 -1px;
+    }
+
+    .m-b-2 {
+      margin-bottom: 2px !important;
+    }
+
+    .embed-responsive {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .row.row-space-2>[class*=col-] {
+      padding: 0 1px;
+    }
+  </style>
+
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "lshukazfk7");
+  </script>
+
+
+</head>
+
+<body>
+
+  <header class="" style="background-color: #0000004a">
+    <div class="navbar navbar-default visible-xs">
+      <button type="button" class="navbar-toggle collapsed" style="color: #fff;">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html" style="float: right; color: #fff;">
+        <img src="assets/images/duna.png" width="25" height="25" class="d-inline-block align-top" alt=""
+          style="display: inline; padding-right: 4px;">
+        Luan Magioli
+      </a>
+    </div>
+
+    <nav class="sidebar" style="background-color: #000">
+      <div class="navbar-collapse" id="navbar-collapse">
+        <div class="site-header hidden-xs">
+          <a class="site-brand" href="index.html" title="" style="color: #ffffff;">
+            <img class="img site-logo" alt="" src="assets/images/duna.png" style="width: 100px;">
+            <br />
+            Luan Magioli
+          </a>
+          <p style="color: #bcbcbc; font-size: 12px;">Computer Vision / Software development / Artist</p>
+        </div>
+        <ul class="nav">
+          <li><a style="color: #ffffff;" href="index.html" title="">Software • Technology</a></li>
+          <li><a style="color: #ffffff;" href="posts.html" title="">Articles • Tutorials</a></li>
+          <li><a style="color: #ffffff;" href="art.html" title="">Art • Sketches</a></li>
+          <li><br /></li>
+          <li><a style="color: #ffffff; font-size: 14px;" href="about.html" title=""><i><b>About me</b></i></a></li>
+        </ul>
+
+        <nav class="nav-footer">
+          <p class="nav-footer-social-buttons">
+            <a class="fa-icon" href="mailto:luanmagioli@gmail.com" title="" style="color: #ffffff;">
+              <i class="fa fa-envelope"></i>
+            </a>
+            <a class="fa-icon" href="https://www.instagram.com/luanmagioli" title="" style="color: #ffffff;">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </p>
+          <p style="color: #bcbcbc;">▒▒▓█ 2024</p>
+        </nav>
+      </div>
+    </nav>
+  </header>
+
+  <main class="" id="main-collapse" style="background-color: #000;">
+
+    <!-- Add your site or app content here -->
+    <div class="container">
+      <div id="content" class="content p-0">
+        <div class="profile-header">
+          <div class="profile-header-cover"></div>
+
+          <div class="profile-header-content" style="height: 120px;">
+          </div>
+
+          <ul class="profile-header-tab nav nav-tabs" style="padding-left: 0;">
+            <marquee SCROLLAMOUNT="6" class="nav-item"
+              style="color: #000; font-size: 18px; margin-bottom: -10px; font-weight: 400;">
+              Computer Vision / Software development / Artist / Capoeira / Machine Learning / Python / Education / Data
+              Science / Technology / Art / Sketches / Music / Science / Engineering / Capoeira / Machine Learning /
+              Python / Education / Computer Vision / Software development / Artist / Data
+              Science / Sketches / Music / Technology / Art /
+            </marquee>
+          </ul>
+        </div>
+
+        <div class="profile-container">
+          <div class="row row-space-20">
+            <div class="col-md-4">
+              <ul class="profile-info-list">
+                <img class="img-responsive" alt="" src="assets/images/luan.jpg">
+                <li class="title">Hi there 👋</li>
+                <p>
+                  I'm Luan Magioli, a Computer Vision Researcher and Software Developer, with a passion for art and music.
+                  <br />
+                  Capoeirista who finds joy in movement and culture. Embracing life with curiosity and enthusiasm 🌊
+                </p>
+                <br />
+                <li class="title">EDUCATION</li>
+
+                <li>
+                  <div class="field">2023-discontinued</div>
+                  <div class="value">
+                    Master's in Neuroscience <a href="https://ufrn.br/">(UFRN)</a><br />
+                    <i style="font-size: 12px;">Study in signal processing and machine learning with a focus on
+                      understanding behavioral patterns and neuroplasticity.</i>
+                  </div>
+                </li>
+                <li>
+                  <div class="field">2020-2022</div>
+                  <div class="value">
+                    Systems Development Analyst <a href="https://ufrn.br/">(UFRN)</a><br />
+                    <i style="font-size: 12px;">Researcher, developing intelligent systems.</i>
+                  </div>
+                </li>
+                <li>
+                  <div class="field">2017-2019</div>
+                  <div class="value">
+                    IT Technician integrated to high school <a href="https://ufrn.br/">(UFRN)</a><br />
+                    <i style="font-size: 12px;">Researcher, developing computer vision systems for agriculture.</i>
+                  </div>
+                </li>
+                <br />
+                <li class="title">MORE INFO</li>
+                <li>
+                  <div class="field">Location:</div>
+                  <div class="value">Rio Grande do Norte/São Paulo, Brasil</div>
+                </li>
+                <li>
+                  <div class="field">Languages:</div>
+                  <div class="value">
+                    <u>Portuguese:</u> Native <br />
+                    <u>English:</u> Fluent <br />
+                    <u>Spanish:</u> Intermediate <br />
+                  </div>
+                </li>
+                <li>
+                  <div class="field">Youtube recommendations:</div>
+                </li>
+                <li class="img-list">
+                  <a href="https://www.youtube.com/@TheCodingTrain" class="m-b-5"><img src="https://static.wikia.nocookie.net/youtube/images/2/25/The_Coding_Train.jpg" alt="" /></a>
+                  <a href="https://www.youtube.com/@ArtemKirsanov" class="m-b-5"><img src="https://miro.medium.com/v2/resize:fit:798/1*uecfK4ffeb68siUQhj5Tog.png" alt="" /></a>
+                  <a href="https://www.youtube.com/@CaptainDisillusion" class="m-b-5"><img src="hackaday.com/wp-content/uploads/2015/09/disillusion_thumb_still.jpg" alt="" /></a>
+                  <a href="https://www.youtube.com/@SebastianLague" class="m-b-5"><img src="https://img.itch.zone/aW1nLzgxMTU2OTIuanBn/315x250%23c/d54v0w.jpg" alt="" /></a>
+                  <a href="https://www.youtube.com/@helenrennie" class="m-b-5"><img src="https://www.analisamendmentblog.com/wp-content/uploads/2016/05/Helen-Rennie.jpg" alt="" /></a>
+                  <a href="https://www.youtube.com/@Felps" class="m-b-5"><img src="https://pm1.aminoapps.com/6312/d4d3d466d00e3bcd029f1669a94350ab3c14ee17_00.jpg" alt="" /></a>
+                  <a href="https://www.youtube.com/@BillMakingStuff" class="m-b-5"><img src="https://pbs.twimg.com/profile_images/1639418113878794241/ZBPbA-F9_400x400.jpg" alt="" /></a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-8">
+              <div class="tab-content p-0">
+
+                <div class="tab-pane active show" id="profile-videos">
+                  <div class="container" style="width: auto;">
+                    <h2 style="color: #fff;">
+                      Professional timeline
+                    </h2>
+                    <ul class="timeline">
+                      <li>
+                        <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title">Software Architect and Developer at <a
+                                href="https://lais.huol.ufrn.br/">LAIS</a></h4>
+                          </div>
+                          <div class="timeline-body">
+                            <p>As team manager, led the development of ANJO, an advanced system for monitoring patient
+                              vital signs. It was architected in <u>Python</u>, utilizing microservices with <u>MQTT</u>
+                              and <u>gRPC</u>
+                              communication, and employing <u>ESP32</u> hardware with attached sensors. ANJO stands out
+                              for its
+                              efficiency and robustness.</p>
+                          </div>
+                          <p style="float: right;"><small class="text-muted"><i
+                                class="glyphicon glyphicon-time"></i>2022 to 2024</small></p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title">Neuroplasticity researcher at <a
+                                href="https://neuro.ufrn.br/">Brain Institute</a></h4>
+                          </div>
+                          <div class="timeline-body">
+                            <p>
+                              Developed a methodology for analyzing the behavior of mice during communication, using
+                              computer
+                              vision. Adapted the <u>DeepLabCut</u> model to work with our setup, and developed a system
+                              to
+                              predict which mouse was talking using the position of the microphones and the time of
+                              flight of
+                              the sound (basically a <u>triangulation</u> problem).
+                            </p>
+                          </div>
+                          <p style="float: right;"><small class="text-muted"><i
+                                class="glyphicon glyphicon-time"></i>2023</small></p>
+                        </div>
+                      </li>
+                      <!-- fale sobre a docência assistida na disciplina de graduação "Processamento Digital de Imagens" 
+                      -->
+                      <li>
+                        <div class="timeline-badge danger"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title">Digital Image Processing teacher at <a
+                                href="https://www.ufrn.br/">UFRN</a></h4>
+                          </div>
+                          <div class="timeline-body">
+                            <p>I was responsible for the discipline of Digital Image Processing, where I taught the
+                              theoretical foundations and practical applications of image processing. I developed a
+                              <u>Java</u> library for the students to use in their projects, and I also supervised the development of the final projects as <u>Scrum Master</u>.
+                            </p>
+                          </div>
+                          <p style="float: right;"><small class="text-muted"><i
+                                class="glyphicon glyphicon-time"></i>2023.2</small></p>
+                        </div>
+                      
+                      <li>
+                        <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title">Computer Vision Specialist at <a
+                                href="https://www.potimarket.com.br/">Potimarket</a></h4>
+                          </div>
+                          <div class="timeline-body">
+                            <p>Designed the architecture and implemented PotiQuality, a system for analyzing the quality
+                              of shrimp using computer vision. Tools used include <u>openCV</u>, <u>TensorFlow</u>, and
+                              <u>Python GRPC</u>. The system is capable of classifying shrimp by size and quality, and
+                              measure the weight of the animals.
+                            </p>
+                          </div>
+                          <p style="float: right;"><small class="text-muted"><i
+                                class="glyphicon glyphicon-time"></i>2021 to 2023</small></p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title">Full-Stack Developer at <a
+                                href="https://caurn.com.br/novo/">CAURN</a></h4>
+                          </div>
+                          <div class="timeline-body">
+                            <p>Contributed to the development of the CAURN health plan application, working on both the
+                              <u>Flutter</u> front-end and <u>Java</u> back-end. The project was developed using
+                              <u>Scrum</u> methodology, and I was responsible for the refactoring and integration of the
+                              <u>API</u> to the APP and the implementation of new features.
+                            </p>
+                          </div>
+                          <p style="float: right;"><small class="text-muted"><i
+                                class="glyphicon glyphicon-time"></i>2022</small></p>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title">My software was 2nd place at Campus Mobile</h4>
+                          </div>
+                          <div class="timeline-body">
+                            <p>Recognized as a standout project in the Smart Farms category of the Campus Mobile
+                              Program, a prestigious national competition. I've got the opportunity to learn and
+                              implement <u>OKR's</u>, business management, <u>roadmap</u> design, team leadership,
+                              and to present my project to a panel of experts.
+                            </p>
+                          </div>
+                          <p style="float: right;"><small class="text-muted"><i
+                                class="glyphicon glyphicon-time"></i>2022</small></p>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title">Software Architect and Developer at Proseed</h4>
+                          </div>
+                          <div class="timeline-body">
+                            <p>Actively participated in creating a computer vision framework with microservices
+                              architecture, using <u>Java-Micronaut</u>, <u>GRPC</u>, and <u>openCV</u>.
+                              The system was designed to be scalable and efficient, with a focus on real-time processing
+                              and high availability.
+                              It can be used in a variety of applications, such as quality control and monitoring
+                              systems.
+                            </p>
+                          </div>
+                          <p style="float: right;"><small class="text-muted"><i
+                                class="glyphicon glyphicon-time"></i>2020 to 2022</small></p>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title">IT Intern at <a
+                                href="https://www.institutosantosdumont.org.br/">Instituto Santos Dumont</a></h4>
+                          </div>
+                          <div class="timeline-body">
+                            <p>Administered <u>linux</u> servers, performed active and preventive maintenance on
+                              computers and specialized equipment, and
+                              implemented a distributed processing service in <u>Python</u>.</p>
+                          </div>
+                          <p style="float: right;"><small class="text-muted"><i
+                                class="glyphicon glyphicon-time"></i>2020 to 2021</small></p>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="timeline-badge danger"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title">Tutor in Algorithms, Logical Reasoning and Digital Image
+                              Processing
+                              at <a href="https://www.eaj.ufrn.br/">Escola Agrícola de Jundiaí</a></h4>
+                          </div>
+                          <div class="timeline-body">
+                            <p>Tutor in the discipline of Algorithms, Logical Reasoning and Digital Image Processing in
+                              the context of remote education. I was responsible for the development of a gamification
+                              tool to assist in the learning process (and, of course, the classes themselves). 
+                            </p>
+                          </div>
+                          <p style="float: right;"><small class="text-muted"><i
+                                class="glyphicon glyphicon-time"></i>2020 to 2021</small></p>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="timeline-badge warning"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel warning">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title">Development of a new module in the acquisition stage for the
+                              Seedling Analysis System (SAPL®)</h4>
+                          </div>
+                          <div class="timeline-body">
+                            <p>The "Sistema de Análise de Plântulas" (SAPL) is a tool that enables automated seedling analysis to evaluate the quality of seed batches. It stands out for its precision and objectivity, compared to most of the tests traditionally used to conduct routine seed quality tests.</p>
+                          </div>
+                          <p style="float: right;"><small class="text-muted"><i
+                                class="glyphicon glyphicon-time"></i>2019 to 2020</small></p>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="timeline-badge warning"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title">Analysis, development and documentation of the Automated System for Analysis of the
+                              Tetrazolium Test in Soybean Seeds</h4>
+                          </div>
+                          <div class="timeline-body">
+                            <p>The project aimed to develop an automated system for the analysis of the Tetrazolium Test in
+                              soybean seeds. The system was developed using <u>Matlab</u> and <u>Fuzzy logic</u>, and was
+                              capable of classifying seeds as viable or not viable, based on the color of the seeds after
+                              the test. (Project presented at the Congress of Scientific Initiation 2019).
+                          </div>
+                          <p style="float: right;"><small class="text-muted"><i
+                                class="glyphicon glyphicon-time"></i>2019</small></p>
+                        </div>
+                      </li>
+
+                      <li>
+                        <div class="timeline-badge warning"><i class="glyphicon glyphicon-check"></i></div>
+                        <div class="timeline-panel">
+                          <div class="timeline-heading">
+                            <h4 class="timeline-title">Development of the Automated System for Seed Analysis by Sieve
+                              using Digital Image Processing</h4>
+                          </div>
+                          <div class="timeline-body">
+                            <p>This study proposes an automated system for corn and soy morphology analysis using digital image processing. The system, which is faster than traditional methods, efficiently extracts seed descriptors and classifies them according to predefined shape classes.</p>
+                          </div>
+                          <p style="float: right;"><small class="text-muted"><i
+                                class="glyphicon glyphicon-time"></i>2017 to 2018</small></p>
+                        </div>
+                      </li>
+
+
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        masonryBuild();
+      });
+    </script>
+
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      navbarToggleSidebar();
+      navActivePage();
+    });
+  </script>
+
+
+  <script type="text/javascript" src="assets/main.85741bff.js"></script>
+</body>
+
+</html>
